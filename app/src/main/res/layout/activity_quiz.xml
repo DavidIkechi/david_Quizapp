@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".quizActivity">
+
+    <LinearLayout
+        android:id="@+id/logout_welcome_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:alpha="0.9"
+        android:background="#5ca2f9"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:drawableLeft="@drawable/ic_account_box_black1_24dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text=" "
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/ic_info_outline_black_24dp"
+            android:onClick="logout"
+            android:paddingBottom="10dp"
+            android:paddingLeft="18dp"
+            android:paddingRight="25dp"
+            android:paddingTop="10dp"
+            android:text="Logout"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/logout_welcome_user"
+        android:alpha="0.8"
+        android:background="#000"
+        android:orientation="vertical">
+        <!--progress bar to monitor questions answered-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_person_black_24dp" />
+
+        <TextView
+            android:id="@+id/score_percentage_board"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:text="0% covered"
+            android:textColor="#fff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <!-- scroll view to enable scrolling-->
+    <ScrollView
+        android:id="@+id/scroll_slide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bar_container">
+        <!-- container for all question, setting the orientation to vertical -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/question1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/strokeforlayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/forquestion1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=" 1. Andriod application design is done using which language?"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/answer1"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/xml"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="A. XML"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/html"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="B. HTML"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/gol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="C. GOL"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/andriod_studio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="D. Andriod studio"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/question2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/strokeforlayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/forquestion2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=" 2. The following are the uses of intent except?"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/answer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/start_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="A. To start up an activity"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/start_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="B. To start a service"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/start_signal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="C. To start a signal"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/deliver_broadcast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="D. To deliver a broadcast"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/question3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/strokeforlayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/forquestion3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=" 3. In andriod development, ADB stands for?"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/answer3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/device"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="A. andriod device bridge"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/development"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="B. andriod development bridge"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/design"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="C. andriod design bridge"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/broadcast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="D. Andriod development broadcast"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/question4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/strokeforlayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/forquestion4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=" 4. which of the following is not a data type in java?"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/string"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="A. String"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/integer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="B. int"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/booleans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="C. boolean"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/chars"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="D. char"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/question5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/strokeforlayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/forquestion5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=" 5.  objects are instantiated in java using?"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/statics"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="A. static"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/construct"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="B. construct"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="C. new"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/thiss"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="D. this"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/question6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/strokeforlayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/forquestion6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=" 6. Implicit and explicit intent are two types of intent?"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/trues"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="A. true"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/falses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:padding="6dp"
+                        android:text="B. false"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/strokeforlayout"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text=" 7. Select the types of programming errors"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <CheckBox
+                    android:id="@+id/wrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:padding="6dp"
+                    android:text="A. wrong result error"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/syntax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="6dp"
+                    android:text="B. syntax error"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/casting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="6dp"
+                    android:text="C. casting error"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="6dp"
+                    android:text="D. run time error"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+            -->
+
+            <Button
+                android:id="@+id/submit_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:background="#5ca2f9"
+                android:fontFamily="helvetica"
+                android:gravity="center"
+                android:text="SUBMIT"
+                android:textColor="#000"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:alpha="0.9"
+        android:background="#5ca2f9"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/ic_copyright_black_24dp"
+            android:padding="10dp"
+            android:text=" Akwuru David(ab-group-48)"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>
